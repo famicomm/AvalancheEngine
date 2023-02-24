@@ -9,8 +9,9 @@ public class PlayerClass {
 	public static double y;
 	public static double xspeed;
 	public static double yspeed;
-	public boolean jumpPressed, jumpwasPressed;
-	public int dbJumps;
+	public static boolean jumpPressed;
+	public static boolean jumpwasPressed;
+	public static int dbJumps;
 	public PlayerClass() {
 		x = 100;
 		y = 40;
@@ -35,7 +36,7 @@ public class PlayerClass {
 
 		}
 		if (jumpPressed && !jumpwasPressed && dbJumps > 0) {
-			dbJumps = dbJumps - 1;
+			dbJumps = 0; // change value to "dbJumps - 1" to enable DJ
 			yspeed = 6;
 			
 		}

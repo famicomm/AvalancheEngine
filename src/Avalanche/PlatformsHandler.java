@@ -17,6 +17,8 @@ public class PlatformsHandler {
 		mainPlatform();
 	}
 	
+	
+	
 	public static void mainPlatform() {
 		
 		

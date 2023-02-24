@@ -24,7 +24,15 @@ public class CollisionsHandler {
 		
 		if (PlayerClass.x >= 398.0 && PlayerClass.x <= 556.0 && PlayerClass.y <= 74 && PlayerClass.y <= 75) {
 			PlayerClass.yspeed = 0;
-			PlayerClass.xspeed = Math.min(+5, PlayerClass.xspeed+3);
+			PlayerClass.xspeed = PlayerClass.xspeed*0.8; // Normal Movement
+
+			// This is the slide function: PlayerClass.xspeed = Math.min(+5, PlayerClass.xspeed+3);
+		}
+		
+		if (PlayerClass.x >= 398.0 && PlayerClass.x <= 556.0 && PlayerClass.y <= 74 && PlayerClass.y <= 75 && PlayerClass.jumpPressed) {
+			PlayerClass.yspeed = 6;
+
+			// This is the slide function: PlayerClass.xspeed = Math.min(+5, PlayerClass.xspeed+3);
 		}
 		
 		if (PlayerClass.x >= 398.0 && PlayerClass.x <= 556.0 && PlayerClass.y <= 73 && PlayerClass.y >= 40) {
@@ -32,7 +40,9 @@ public class CollisionsHandler {
 		}
 		if (PlayerClass.xspeed <= -1 && PlayerClass.x >= 398.0 && PlayerClass.x <= 556.0 && PlayerClass.y <= 74 && PlayerClass.y <= 75) {
 			PlayerClass.yspeed = 0;
-			PlayerClass.xspeed = Math.min(-5, PlayerClass.xspeed+3);
+			// PlayerClass.xspeed = Math.min(-5, PlayerClass.xspeed+3);
+			
+
 		} else if (PlayerClass.x <= 75) {
 			
 		}
