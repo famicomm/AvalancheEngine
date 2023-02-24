@@ -1,14 +1,5 @@
 package Game;
-import static org.lwjgl.opengl.GL11.GL_PROJECTION;
-import static org.lwjgl.opengl.GL11.GL_QUADS;
-import static org.lwjgl.opengl.GL11.glBegin;
-import static org.lwjgl.opengl.GL11.glClear;
-import static org.lwjgl.opengl.GL11.glColor3d;
-import static org.lwjgl.opengl.GL11.glEnd;
-import static org.lwjgl.opengl.GL11.glLoadIdentity;
-import static org.lwjgl.opengl.GL11.glMatrixMode;
-import static org.lwjgl.opengl.GL11.glOrtho;
-import static org.lwjgl.opengl.GL11.glVertex2d;
+
 
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
@@ -45,18 +36,24 @@ public class game {
 		{
 			
 			// Environment Settings
+			
 			CameraMovement.setCamera();
 			RenderManager.render();
 			
 			// Player drawing
-			
+			System.out.println("X: " + PlayerClass.x + " " + "Y: " + PlayerClass.y);
 			player.drawChar();
+			
+			
+			// Audio Management
+
 			
 			// DO NOT REMOVE
 			Display.update();
 			Display.sync(60);
 		}
 		Display.destroy();
+		
 	}
 
 

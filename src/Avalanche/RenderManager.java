@@ -1,6 +1,5 @@
 package Avalanche;
 import static org.lwjgl.opengl.GL11.*;
-import org.lwjgl.*;
 
 public class RenderManager {
 	public RenderManager() {
@@ -10,6 +9,7 @@ public class RenderManager {
 	public static void render() {
 		drawBackground();
 		drawGround();
+		PlatformsHandler.init();
 
 	}
 	

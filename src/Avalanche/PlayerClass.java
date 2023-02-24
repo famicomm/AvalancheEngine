@@ -5,7 +5,10 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 public class PlayerClass {
 	
-	public double x, y, xspeed, yspeed;
+	public static double x;
+	public static double y;
+	public static double xspeed;
+	public static double yspeed;
 	public boolean jumpPressed, jumpwasPressed;
 	public int dbJumps;
 	public PlayerClass() {
@@ -33,7 +36,7 @@ public class PlayerClass {
 		}
 		if (jumpPressed && !jumpwasPressed && dbJumps > 0) {
 			dbJumps = dbJumps - 1;
-			yspeed = 8;
+			yspeed = 6;
 			
 		}
 
@@ -46,6 +49,9 @@ public class PlayerClass {
 		if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
 			xspeed = Math.min(+5, xspeed+1);
 		}
+		
+		CollisionsHandler.init();
+
 		
 
 	}
@@ -69,11 +75,11 @@ public class PlayerClass {
 		
 		// TR Corner
 		glColor3d(0, 0, 0);
-		glVertex2d(8, 16);
+		glVertex2d(8, 32);
 		
 		// TL Corner
 		glColor3d(0, 0, 0);
-		glVertex2d(-8, 16);
+		glVertex2d(-8, 32);
 		
 		glEnd();
 		
